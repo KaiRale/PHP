@@ -24,7 +24,6 @@ $id=2;
 $good=$goods[array_search($id,array_column($goods,'id'))];
 
 
-
 $isAuth = true; // флаг - авторизован пользователь или нет
 ?>
 
@@ -37,20 +36,18 @@ $isAuth = true; // флаг - авторизован пользователь и
 <body>
 
 <section>
-    <!--    TODO: вывести информацию о товаре $good-->
-    <?php foreach ($good as $key=>$value){
-        echo "<p>$key = $value</p>";
-    }?>
-
+    <!--   TODO: вывести информацию о товаре $good-->
+         <h1><?php echo $good['title']; ?></h1>
+         <p><?php echo $good['price']; ?></p>
 
 </section>
 
 <!--    TODO: если пользователь авторизован $isAuth - отобразить блок для добавления комментариев, в противном случае, сообщить, что ему нужно авторизоваться-->
-    <?php   if ($isAuth):
-                echo " <textarea> </textarea>";
-            else: echo "<p>Авторизуйтесь, чтобы оставить комментарий</p>";
-            endif;
-    ?>
+    <?php   if ($isAuth):?>
+        <?php  ?>  <textarea> </textarea>
+        <?php  else: ?><p>Авторизуйтесь, чтобы оставить комментарий</p>
+    <?php   endif; ?>
+
 
 </body>
 </html>
