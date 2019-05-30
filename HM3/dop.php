@@ -37,5 +37,27 @@ function classGrad($num){
 
 $simil=$similarity($string1,$string2);
 
+//Дан массив, состоящий из целых чисел. Выполнить сортировку массива по возрастанию суммы цифр чисел.
+// Например, дан массив [13, 55, 100]. После сортировки он будет следующего вида: [100, 13, 55],
+// тк сумма цифр числа 100 = 1, сумма цифр числа 13 = 4, а 55 = 10. На экран вывести исходный массив,
+// массив после сортировки и сумму цифр каждого числа отсортированного массива.
 
+$arrOfNum=[13,55,100];
 
+function sort1($arr){
+    $newArr=[];
+    $newArr=array_map('sumNum',$arr);
+    $arrComb=array_combine($newArr,$arr);
+    ksort($arrComb);
+    var_dump($arr);
+    var_dump($newArr);
+    var_dump(array_keys(array_flip($arrComb)));
+}
+
+function sumNum($str){
+    $str=str_split($str);
+    $str=array_sum($str);
+    return $str;
+}
+
+sort1($arrOfNum);
