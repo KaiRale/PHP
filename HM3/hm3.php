@@ -23,21 +23,22 @@ function convert($str,$flag){
         }*/
 
     if ($flag==1){
-        return strtoupper($str);
+        return mb_strtoupper($str);
     }
     elseif ($flag==2){
-        return strtolower($str);
+        return mb_strtolower($str);
     }
     elseif ($flag==3) {
-        return ucwords(strtolower($str));
+        return  mb_convert_case(mb_strtolower($str),MB_CASE_TITLE);
     }
     else {
         echo 'Введите коорекный номер операции';
     }
 }
 
+$rustring='Строка для преобразования';
 $string='Some string for test';
-var_dump(convert($string,2));
+var_dump(convert($rustring,3));
 
 //3.Создать функцию по преобразованию нотаций: строка вида 'this_is_string'
 // преобразуется в 'thisIsString' (CamelCase-нотация)
