@@ -1,0 +1,32 @@
+
+#errors{
+    color: #ff3333;
+    font-style: italic;
+    margin: 5px auto 5px auto;
+}
+.invalid{
+    width: 300px;
+    height: 30px;
+    font-size: 18px;
+    margin: 5px auto 2px auto;
+    border-radius: 4px;
+    padding-left: 15px;
+    border: #ff3333 solid 2px;
+}
+
+.valid{
+    width: 300px;
+    height: 30px;
+    font-size: 18px;
+    margin-top: 15px ;
+    border-radius: 4px;
+    padding-left: 15px;
+    border: #80ff80 solid 2px;
+}
+
+.errorText {
+    display: none;
+    color: #ff3333;
+    font-style: italic;
+    margin: 5px auto 5px auto;
+}

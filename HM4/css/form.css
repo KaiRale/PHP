@@ -1,0 +1,65 @@
+body {
+     background-image: url("../img/fon.jpg");
+     background-attachment: fixed;
+     color: lightcyan;
+ }
+
+.forForm{
+    width: 400px;
+    height: 450px;
+    background-color: rgb(24, 33, 52, 0.7);
+    margin: 200px auto 0 auto;
+    text-align: center;
+    padding-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 20px 28px rgba(0,0,0,0.5), 0 14px 20px rgba(0,0,0,0.4)
+}
+
+.validate{
+    width: 300px;
+    height: 30px;
+    font-size: 18px;
+    margin-top: 15px ;
+    border-radius: 4px;
+    padding-left: 15px;
+}
+
+.date{
+    width: 200px;
+    height: 30px;
+    margin-top: 15px ;
+    font-size: 18px;
+    border-radius: 4px;
+}
+
+.gender{
+    margin-top: 15px;
+}
+.check{
+    margin-right:15px ;
+}
+.country{
+    width: 200px;
+    height: 30px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    border-radius: 4px;
+}
+.submit input{
+    padding: 15px auto 15px auto;
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 6px;
+    background-color: #2ca8c6;
+    color: lightcyan;
+    border: none;
+    border-bottom: 2px solid #6ee9fd;
+    cursor: pointer;
+}
+.submit input:hover{
+    transition: all 0.5s;
+    background: #fff;
+    color: #2c536c;
+}
