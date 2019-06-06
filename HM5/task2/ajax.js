@@ -14,15 +14,9 @@ function ajaxHandler(event) {
     xhr.open("POST", this.action, true);
     xhr.send(form_data);
 
-    xhr.onload = function () {
-        // когда сервер ответит на запрос,
-        // будет вызвана данная функция - обработчик события load
-        // для объекта запроса
-
+    xhr.onload = function () {       
         if (xhr.status == 200) {
-            // с сервера пришел ответ
             responseHandler(xhr.responseText);
-
         }
     }
 }
