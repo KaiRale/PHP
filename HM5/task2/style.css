@@ -1,0 +1,66 @@
+
+.someForm {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    background: lightgreen;
+    border: green solid 2px;
+    margin: 250px auto 0 auto ;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 1px 1px 5px rgba(0,0,0, 0.8) ;
+    border-radius: 10px;
+}
+h1 {
+    margin: 0;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    border-bottom: 2px solid green;
+    font-size: 25px;
+    color: darkgreen;
+}
+.url {
+    position: absolute;
+    right: 50px;
+    bottom: 90px;
+
+    width: 300px;
+    height: 30px;
+    margin-top: 10px;
+    padding: 5px;
+
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    box-shadow: 1px 1px 3px rgba(0,0,0, 0.8) ;
+}
+.url:focus{
+    border: 2px solid green;
+    transform: translateX(3px);
+
+}
+.forSubm {
+    cursor: pointer;
+    position: absolute;
+    right: 150px;
+    bottom: 30px;
+
+    width: 120px;
+    height: 35px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: green solid 1px;
+    color: darkgreen;
+    background: cornsilk;
+
+}
+
+.forSubm:hover{
+
+    transform: scale(1.05);
+}
+
+.errors{
+    color: #ff3333;
+}
