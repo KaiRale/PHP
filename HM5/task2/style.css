@@ -1,18 +1,30 @@
-
-.someForm {
+body{
+    background-image: url("img/grass.png");
+    background-repeat: repeat-x;
+    background-position: 0px -30px ;
+}
+img{
+    width: 193px;
+    height: 193px;
+    margin: -400px -250px 0px auto;
+}
+img:hover{
+    transform:scale(1.02) ;
+}
+.divForm {
     position: relative;
     width: 400px;
     height: 200px;
     background: lightgreen;
     border: green solid 2px;
-    margin: 250px auto 0 auto ;
+    margin: 300px auto 0 auto ;
     padding: 10px;
     text-align: center;
     box-shadow: 1px 1px 5px rgba(0,0,0, 0.8) ;
     border-radius: 10px;
 }
 h1 {
-    margin: 0;
+    margin: -18px auto 15px auto ;
     text-transform: uppercase;
     padding-bottom: 5px;
     border-bottom: 2px solid green;
