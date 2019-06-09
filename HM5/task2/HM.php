@@ -107,7 +107,9 @@ function check_time($arr,$filename){
         $dateurl=end(explode(' : ',$value));
         if ($dateurl>date('U')){
             $repl=create_new_url(explode(' : ',$value)[1],$arr);
-            str_replace($value,$repl,$filename);
+            $fp=fopen($filename,'a');
+            str_replace($value,$repl,$fp);
+            fclose($fp);
         }
     }
 }
