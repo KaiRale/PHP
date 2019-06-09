@@ -37,6 +37,7 @@ function valid_url($url,$filename){
     }
 
     $str=search($url,$arr,$filename);
+    check_time($arr,$filename);
     return $str;
 }
 
@@ -52,18 +53,25 @@ function search($url,&$array,$filename){
     foreach ($array as $value){
         $pos=strpos($value,$url);
         if ($pos!==false){
-            $miniurl=end(explode(' : ',$value));
+            $miniurl=explode(' : ',$value)[1];
             echo "Значение из базы: $miniurl";
             return;
         }
     }
     if ($pos!==1){
-        $miniurl=trim_url($url).gen_rand($array);
-        $newurl=':'.$url.' : '.$miniurl;
-        write_url($filename,$newurl);
-        echo "Создана новая ссылка: $miniurl";
+        $newurl=create_new_url($url,$array);
+        write_url($filename,"\n".$newurl[1]);
+        echo "Создана новая ссылка: $newurl[0]";
         return ;
     }
+}
+
+//создание нового url
+function create_new_url($url,$array){
+    $urlarr=[];
+    $urlarr[0]=trim_url($url).gen_rand($array);
+    $urlarr[1]=':'.$url.' : '.$urlarr[0].' : '.(date('U')+18000);
+    return $urlarr;
 }
 
 //генерация сокращалки
@@ -93,6 +101,16 @@ function trim_url($url){
     return $match[0];
 }
 
+//функция проверки времени жизни
+function check_time($arr,$filename){
+    foreach ($arr as $value){
+        $dateurl=end(explode(' : ',$value));
+        if ($dateurl>date('U')){
+            $repl=create_new_url(explode(' : ',$value)[1],$arr);
+            str_replace($value,$repl,$filename);
+        }
+    }
+}
 
 //изначально в файле лежало несколько ссылок, поэтому нужны эти манипуляции с перезаписью
 //функция для перезапси данных в файле
