@@ -87,7 +87,6 @@ let form = document.forms.someForm;
 form.addEventListener('submit', ajaxHandler);
 function ajaxHandler(event) {
     event.preventDefault();
-   // let validate_fields = document.querySelectorAll('.validate');
     if (!formValidator.isValid()){
         document.getElementById("errors").innerHTML =
             'Проверьте правильность введенных данных';
@@ -96,15 +95,12 @@ function ajaxHandler(event) {
     let form_data = new FormData(this);
     console.log(form_data.get("name"));
 
-    let xhr = new XMLHttpRequest(); // объкт запроса
+    let xhr = new XMLHttpRequest();
     console.log(xhr);
-    // запрос будет отправлем методом POST на обработчик формы
-    // в данной случае - "form_handler.php"
     xhr.open("POST", this.action, true);
     xhr.send(form_data);
 
     xhr.onload = function (event) {
-        // функция будет вызвана, когда придет ответ от сервера
         if (xhr.status == 200) {
             responseHandler(xhr.responseText);
         }
