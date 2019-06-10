@@ -80,19 +80,6 @@ formValidator.addRules({
     }
 });
 
-//метод get
-//let form = document.forms.someForm;
-/*form.addEventListener('submit', formHandler);
-
-function formHandler(event) {
-    event.preventDefault();
-    if (!formValidator.isValid()){
-        document.getElementById("errors").innerHTML =
-            'Проверьте правильность данных';
-        return;
-    }
-    this.submit();
-}*/
 
 
 //ajax
