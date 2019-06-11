@@ -7,7 +7,8 @@ class ChiefDoctor extends TreatingDoctor
     public function getPatDoc(TreatingDoctor $doctor){
 
         foreach ($doctor->getPatients() as $patient) {
-            var_dump('Врач '. $doctor->getName().' принимает пациента: '. $patient->getName()/*.' в '.$patient->getDate()*/ );
+            var_dump('Врач '. $doctor->getName().' принимает пациента: '. $patient->getName().
+                     '. Дата записи: '.$patient->getDate()->format("Y-m-d H:i:s"));
         }
     }
 }
