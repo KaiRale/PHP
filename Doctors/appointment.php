@@ -29,7 +29,8 @@ $patient5->setDate(date_create("2012-10-30 12:30" ));;
 
 
 foreach ($bigDoctor->getPatients() as $patient) {
-    var_dump('Врач '. $bigDoctor->getName().' принимает пациента: '. $patient->getName()/*.' в '.$patient->getDate()*/ );
+    var_dump('Врач '. $bigDoctor->getName().' принимает пациента: '. $patient->getName().
+             '. Дата записи: '.$patient->getDate()->format("Y-m-d H:i:s"));
 }
 
 $lor=new TreatingDoctor('Носовик');
